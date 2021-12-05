@@ -80,7 +80,7 @@ PCA_proj_pursuit <- function(X, ncomp, loss, dloss, V0 = NULL){
     nv <- sqrt(sum(v^2))
     p <- Z%*%v/nv
     dp <- dloss(p)
-    -1/nv*t(Z-p%*%t(v)/nv^2)%*%dp
+    -1/nv*t(Z-p%*%t(v)/nv)%*%dp
   }
   ### With the deflation scheme we don't optimise
   ### over all columns in V simultaneously, but
